@@ -33,5 +33,5 @@ jobs:
         working-directory: ./Terraform-VPC
       - name: Terraform Apply
         id: apply
-        run: terraform destroy --auto-approve
+        run: terraform destroy --auto-approve # update detroy with run to actually apply the changes
         working-directory: ./Terraform-VPC
