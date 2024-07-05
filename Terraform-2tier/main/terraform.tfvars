@@ -5,4 +5,12 @@ public_subnet_az1_cidr       = "10.0.0.0/24"
 public_subnet_az2_cidr       = "10.0.1.0/24"
 private_data_subnet_az1_cidr = "10.0.2.0/24"
 private_data_subnet_az2_cidr = "10.0.3.0/24"
+my_ip                        = "192.168.1.103/32" #Add your ip address so you can ssh from your local system.
+image_name                   = "ubuntu/images/hvm-ssd/ubuntu"
+instance_type                = "t2.micro"
+desired_capacity             = "1"
+min_size                     = "1"
+max_size                     = "3"
+domain_name                  = "test.np"
+alternative_name             = "*.test.np"
 
