@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Stats Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .driver-card, .constructor-card {
+            transition: transform 0.3s;
+        }
+        .driver-card:hover, .constructor-card:hover {
+            transform: scale(1.05);
+        }
+        .nav-pills .nav-link.active {
+            background-color: #e10600;
+        }
+        .nav-pills .nav-link {
+            color: #15151e;
+        }
+        .f1-red {
+            color: #e10600;
+        }
+        .driver-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .constructor-img {
+            height: 100px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1">
+                <i class="fas fa-flag-checkered me-2"></i>F1 Stats Dashboard
+            </span>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <ul class="nav nav-pills mb-4" id="f1Tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="calendar-tab" data-bs-toggle="pill" href="#calendar">2024 Calendar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="drivers-tab" data-bs-toggle="pill" href="#drivers">Drivers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="constructors-tab" data-bs-toggle="pill" href="#constructors">Constructors</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="history-tab" data-bs-toggle="pill" href="#history">Historical Stats</a>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="f1TabContent">
+            <!-- Calendar Section -->
+            <div class="tab-pane fade show active" id="calendar">
+                <h2 class="mb-4">2024 F1 Race Calendar</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="calendar-table">
+                        <thead>
+                            <tr>
+                                <th>Round</th>
+                                <th>Race</th>
+                                <th>Circuit</th>
+                                <th>Location</th>
+                                <th>Date</th>
+                                <th>Race Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td colspan="6" class="text-center">Loading calendar data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Drivers Section -->
+            <div class="tab-pane fade" id="drivers">
+                <h2 class="mb-4">2024 F1 Drivers</h2>
+                <div class="row" id="drivers-grid">
+                    <div class="col-12 text-center">Loading drivers data...</div>
+                </div>
+            </div>
+
+            <!-- Constructors Section -->
+            <div class="tab-pane fade" id="constructors">
+                <h2 class="mb-4">2024 F1 Constructors</h2>
+                <div class="row" id="constructors-grid">
+                    <div class="col-12 text-center">Loading constructors data...</div>
+                </div>
+            </div>
+
+            <!-- Historical Stats Section -->
+            <div class="tab-pane fade" id="history">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="mb-4">World Champions</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="champions-table">
+                                <thead>
+                                    <tr>
+                                        <th>Year</th>
+                                        <th>Driver</th>
+                                        <th>Constructor</th>
+                                        <th>Wins</th>
+                                        <th>Points</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td colspan="5" class="text-center">Loading champions data...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="mb-4">Constructor Champions</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="constructor-champions-table">
+                                <thead>
+                                    <tr>
+                                        <th>Year</th>
+                                        <th>Constructor</th>
+                                        <th>Nationality</th>
+                                        <th>Wins</th>
+                                        <th>Points</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td colspan="5" class="text-center">Loading constructor data...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
