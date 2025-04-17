@@ -16,6 +16,9 @@ This project demonstrates a production-grade AWS setup to deploy a Flask applica
 - **IAM roles** enforcing least-privilege access.
 - **Encryption** for data at rest and in transit.
 
+- ### Important Information:
+  The Flask app used in this project is just for demo purposes only.
+
 ---
 
 ## 🛠️ Tech Stack
