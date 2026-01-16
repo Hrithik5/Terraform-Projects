@@ -1,4 +1,4 @@
-# Secure AWS ECS Flask Application with ALB & DynamoDB
+# Automated Cloud Application Platform
 
 ![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
